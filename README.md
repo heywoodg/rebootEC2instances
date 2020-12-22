@@ -13,4 +13,4 @@ To do the reboot, it will:
 3) Wait 120 seconds
 4) Add the instance back into the target groups.
 
-The Lamdba function can be run on a scheuled (even 15 minutes for example) to monitor and remediate hosts with high memory consumption.
+The Lamdba function can then be run on a scheduled (every 15 minutes for example) to monitor and remediate hosts with high memory consumption.
