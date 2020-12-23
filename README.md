@@ -1,5 +1,5 @@
 # Automatically Reboot EC2 Instances Gracefully
-This is a AWS lambda function that will automatically reboot EC2 instances based on the the memory consumption. This is useful when you have a memory leak on instances that are in a TG (target group), and you need a graceful way to deal with them.
+This is a AWS lambda function that will automatically but gracefully reboot EC2 instances based on the the memory consumption. This is useful when you have a memory leak on instances that are in a TG (target group), and you need a graceful way to deal with them.
 
 The code is Python, and will use Boto3 to get the healthy instances that are in the specified target groups, and then add them to a list. For each instance, it will check the there are at least 5 or more before continuing. This is a failsafe to prevent taking instances out of the TG when it may adversely affect the ASGs (autoscaling group) ability to handle the load. Once done, it will get the "Memory % Committed Bytes In Use" CloudWatch metric from each one (assuming that it has been enabled on the instance).
 
